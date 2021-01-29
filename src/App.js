@@ -27,6 +27,16 @@ class App extends Component {
     ],
   }
 
+  addPost = (post) => {
+    const userId = Math.floor(Math.random() * 50)
+    const id = this.state.posts.length + 1
+    post.userId = userId
+    post.id = id
+    this.setState({
+      posts: [...this.state.posts, post],
+    })
+  }
+
   deletePost = (id) => {
     const postToDelete = this.state.posts.filter((post) => {
       return post.id !== id
@@ -39,7 +49,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <AddPost />
+        <AddPost handleSubmit={this.addPost} />
         <Posts posts={this.state.posts} delPost={this.deletePost} />
       </>
     )

@@ -12,10 +12,19 @@ class AddPost extends Component {
     })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.handleSubmit(this.state)
+    this.setState({
+      title: '',
+      body: '',
+    })
+  }
+
   render() {
     return (
       <>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             type='text'
             onChange={this.handleChange}
