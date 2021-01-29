@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Posts from './components/Posts'
 import AddPost from './components/AddPost'
+import Header from './components/Header'
+import Photos from './components/Photos'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css'
 
 class App extends Component {
@@ -48,10 +51,20 @@ class App extends Component {
   }
   render() {
     return (
-      <>
-        <AddPost handleSubmit={this.addPost} />
-        <Posts posts={this.state.posts} delPost={this.deletePost} />
-      </>
+      <Router>
+        <Header />
+        <Route
+          exact
+          path='/'
+          render={() => (
+            <>
+              <AddPost handleSubmit={this.addPost} />
+              <Posts posts={this.state.posts} delPost={this.deletePost} />
+            </>
+          )}
+        />
+        <Route path='/photos' component={Photos} />
+      </Router>
     )
   }
 }
