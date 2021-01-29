@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Posts extends Component {
   delPost = (id) => {
@@ -12,7 +13,10 @@ class Posts extends Component {
             <div key={post.id}>
               <h4>{post.title.toUpperCase()}</h4>
               <code>{post.body}</code>
-              <button style={editBtn}>Edit</button>
+              <button style={editBtn}>
+                <Link to={`/editpost/${post.id}`}>Edit</Link>
+              </button>
+
               <button onClick={() => this.delPost(post.id)} style={delBtn}>
                 X
               </button>
