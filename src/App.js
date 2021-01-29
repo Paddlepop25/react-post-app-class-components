@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Posts from './components/Posts'
+import AddPost from './components/AddPost'
 import './App.css'
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
   render() {
     return (
       <>
+        <AddPost />
         <Posts posts={this.state.posts} delPost={this.deletePost} />
       </>
     )
