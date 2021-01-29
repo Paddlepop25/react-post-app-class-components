@@ -32,7 +32,7 @@ class App extends Component {
 
   addPost = (post) => {
     const userId = Math.floor(Math.random() * 50)
-    const id = this.state.posts.length + 1
+    const id = this.state.posts.length + userId
     post.userId = userId
     post.id = id
     this.setState({
@@ -52,18 +52,20 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Header />
-        <Route
-          exact
-          path='/'
-          render={() => (
-            <>
-              <AddPost handleSubmit={this.addPost} />
-              <Posts posts={this.state.posts} delPost={this.deletePost} />
-            </>
-          )}
-        />
-        <Route path='/photos' component={Photos} />
+        <div className='container'>
+          <Header />
+          <Route
+            exact
+            path='/'
+            render={() => (
+              <>
+                <AddPost handleSubmit={this.addPost} />
+                <Posts posts={this.state.posts} delPost={this.deletePost} />
+              </>
+            )}
+          />
+          <Route path='/photos' component={Photos} />
+        </div>
       </Router>
     )
   }
