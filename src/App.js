@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Posts from './components/Posts'
 import './App.css'
 
 class App extends Component {
@@ -24,17 +25,20 @@ class App extends Component {
       },
     ],
   }
+
+  deletePost = (id) => {
+    const postToDelete = this.state.posts.filter((post) => {
+      return post.id !== id
+    })
+    // console.log(postToDelete)
+    this.setState({
+      posts: postToDelete,
+    })
+  }
   render() {
     return (
       <>
-        {this.state.posts.map((post) => {
-          return (
-            <div>
-              <h3>{post.title}</h3>
-              <code>{post.body}</code>
-            </div>
-          )
-        })}
+        <Posts posts={this.state.posts} delPost={this.deletePost} />
       </>
     )
   }
