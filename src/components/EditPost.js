@@ -5,20 +5,25 @@ import posts from '../postsData.json'
 class EditPost extends Component {
   state = {
     post: {
-      title: '',
-      body: '',
+      carb: '',
+      yummies: '',
     },
   }
 
   componentDidMount() {
     const { id } = this.props.match.params
-    const post = posts.filter((post) => post.id === Number(id))[0]
-    this.setState(
-      {
-        post,
-      },
-      () => console.log('this.state.post >>> ', this.state.post)
-    )
+
+    if (id > 3) {
+      alert('Please choose RICE, NOODLES or BREAD\nfor the edit page')
+    } else {
+      const post = posts.filter((post) => post.id === Number(id))[0]
+      this.setState(
+        {
+          post,
+        },
+        () => console.log('this.state.post >>> ', this.state.post)
+      )
+    }
   }
 
   editPost = (event) => {
@@ -38,18 +43,24 @@ class EditPost extends Component {
   }
 
   render() {
-    const { title, body } = this.state.post
-    // console.log(title)
+    const { carb, yummies } = this.state.post
+    // console.log(carb)
     return (
       <>
         <Header />
         <div className='container'>
           <form onSubmit={this.saveEditPost}>
             <h3 style={{ margin: '15px 0' }}>Edit post</h3>
-            <label>Title: </label>
+            <code style={code}>
+              Please choose RICE, NOODLES or BREAD from the homepage
+            </code>
+
+            <br />
+            <br />
+            <label>Carb: </label>
             <input
-              name='title'
-              value={title}
+              name='carb'
+              value={carb}
               onChange={this.editPost}
               maxLength='15'
               style={inputStyle}
@@ -57,10 +68,10 @@ class EditPost extends Component {
             <br />
             <br />
 
-            <label>Body: </label>
+            <label>Yummies: </label>
             <input
-              name='body'
-              value={body}
+              name='yummies'
+              value={yummies}
               onChange={this.editPost}
               maxLength='100'
               style={inputStyle}
@@ -69,12 +80,17 @@ class EditPost extends Component {
             <br />
             <br />
 
-            <button style={saveBtn}>Save</button>
+            <button style={saveBtn}>
+              {this.state.post.carb !== '' ? 'Save post' : 'Back to homepage'}
+            </button>
           </form>
         </div>
       </>
     )
   }
+}
+const code = {
+  color: '#ff5959',
 }
 
 const inputStyle = {

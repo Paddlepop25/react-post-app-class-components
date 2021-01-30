@@ -11,12 +11,11 @@ class Posts extends Component {
         {this.props.posts.map((post) => {
           return (
             <div key={post.id}>
-              <h4>{post.title.toUpperCase()}</h4>
-              <span>{post.body}</span>
+              <h4>{post.carb.toUpperCase()}</h4>
+              <span>{post.yummies}</span>
               <button style={editBtn}>
                 <Link to={`/editpost/${post.id}`}>Edit</Link>
               </button>
-
               <button onClick={() => this.delPost(post.id)} style={delBtn}>
                 X
               </button>

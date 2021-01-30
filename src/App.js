@@ -18,13 +18,19 @@ class App extends Component {
   }
 
   addPost = (post) => {
-    const userId = Math.floor(Math.random() * 50)
+    const userId = Math.floor(Math.random() * 50 + 3)
     const id = this.state.posts.length + userId
-    post.userId = userId
-    post.id = id
-    this.setState({
-      posts: [...this.state.posts, post],
-    })
+    // console.log(post)
+
+    if (post.carb === '' || post.yummies === '') {
+      alert('Please fill in both the carb and yummies boxes')
+    } else {
+      post.userId = userId
+      post.id = id
+      this.setState({
+        posts: [...this.state.posts, post],
+      })
+    }
   }
 
   deletePost = (id) => {

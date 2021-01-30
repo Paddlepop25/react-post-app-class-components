@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 class AddPost extends Component {
   state = {
-    title: '',
-    body: '',
+    carb: '',
+    yummies: '',
   }
 
   handleChange = (event) => {
@@ -16,8 +16,8 @@ class AddPost extends Component {
     event.preventDefault()
     this.props.handleSubmit(this.state)
     this.setState({
-      title: '',
-      body: '',
+      carb: '',
+      yummies: '',
     })
   }
 
@@ -28,17 +28,17 @@ class AddPost extends Component {
           <input
             type='text'
             onChange={this.handleChange}
-            name='title'
-            value={this.state.title}
-            placeholder='enter title...'
+            name='carb'
+            value={this.state.carb}
+            placeholder='enter carb...'
             style={{ flex: '5', padding: '5px' }}
           />
           <input
             type='text'
             onChange={this.handleChange}
-            name='body'
-            value={this.state.body}
-            placeholder='enter body...'
+            name='yummies'
+            value={this.state.yummies}
+            placeholder='enter yummies...'
             style={{ flex: '5', padding: '10px' }}
           />
           <button
