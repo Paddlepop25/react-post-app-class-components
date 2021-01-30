@@ -1,0 +1,21 @@
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "rice",
+    "body": "fried rice, claypot chicken rice, brown porridge, briyani"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "noodles",
+    "body": "hokkien mee, prawn noodles, bak chor mee, pho"
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "bread",
+    "body": "french loaf, sandwich, yakun kaya toast, butter bun"
+  }
+]
+
