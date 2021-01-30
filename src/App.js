@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   addPost = (post) => {
-    const userId = Math.floor(Math.random() * 50 + 3)
+    const userId = Math.floor(Math.random() * 1000 + 3)
     const id = this.state.posts.length + userId
     // console.log(post)
 
