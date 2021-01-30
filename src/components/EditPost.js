@@ -30,6 +30,13 @@ class EditPost extends Component {
     })
   }
 
+  saveEditPost = (event) => {
+    event.preventDefault()
+    console.log('saved edited post') // save to database in real life
+
+    this.props.history.push('/')
+  }
+
   render() {
     const { title, body } = this.state.post
     // console.log(title)
@@ -37,26 +44,33 @@ class EditPost extends Component {
       <>
         <Header />
         <div className='container'>
-          <h3 style={{ margin: '15px 0' }}>Edit post</h3>
-          <label>Title: </label>
-          <input
-            name='title'
-            value={title}
-            onChange={this.editPost}
-            maxLength='15'
-            style={inputStyle}
-          />
-          <br />
-          <br />
+          <form onSubmit={this.saveEditPost}>
+            <h3 style={{ margin: '15px 0' }}>Edit post</h3>
+            <label>Title: </label>
+            <input
+              name='title'
+              value={title}
+              onChange={this.editPost}
+              maxLength='15'
+              style={inputStyle}
+            />
+            <br />
+            <br />
 
-          <label>Body: </label>
-          <input
-            name='body'
-            value={body}
-            onChange={this.editPost}
-            maxLength='100'
-            style={inputStyle}
-          />
+            <label>Body: </label>
+            <input
+              name='body'
+              value={body}
+              onChange={this.editPost}
+              maxLength='100'
+              style={inputStyle}
+            />
+
+            <br />
+            <br />
+
+            <button style={saveBtn}>Save</button>
+          </form>
         </div>
       </>
     )
@@ -66,6 +80,15 @@ class EditPost extends Component {
 const inputStyle = {
   width: '80%',
   padding: '5px',
+}
+
+const saveBtn = {
+  background: '#fcba03',
+  color: '#fff',
+  border: 'none',
+  padding: '5px 9px',
+  borderRadius: '20px',
+  cursor: 'pointer',
 }
 
 export default EditPost
