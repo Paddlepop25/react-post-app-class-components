@@ -20,7 +20,7 @@ class App extends Component {
         userId: 1,
         id: 2,
         title: 'noodles',
-        body: 'hokkien mee, mee goreng, prawn noodles, bak chor mee, pho',
+        body: 'hokkien mee, prawn noodles, bak chor mee, pho',
       },
       {
         userId: 1,

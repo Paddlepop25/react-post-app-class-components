@@ -10,26 +10,21 @@ body {
 }
 
 a {
-  color: #333;
   text-decoration: none;
+  color: #fff;
 }
 
 .container {
   padding: 0 1rem;
 }
 
-.btn {
-  display: inline-block;
-  border: none;
-  background: #555;
-  color: #fff;
-  padding: 7px 20px;
-  cursor: pointer;
+h4 {
+  margin-top: 15px;
 }
 
-.btn:hover {
-  background: #666;
-}
+/* p {
+  margin-bottom: 10px;
+} */
 
 img {
   width: 50%;

@@ -39,9 +39,12 @@ class AddPost extends Component {
             name='body'
             value={this.state.body}
             placeholder='enter body...'
-            style={{ flex: '5', padding: '5px' }}
+            style={{ flex: '5', padding: '10px' }}
           />
-          <button type='submit' style={{ flex: '2' }}>
+          <button
+            type='submit'
+            style={{ flex: '2', background: 'orange', cursor: 'pointer' }}
+          >
             Add Post
           </button>
         </form>

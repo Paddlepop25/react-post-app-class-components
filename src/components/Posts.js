@@ -12,7 +12,7 @@ class Posts extends Component {
           return (
             <div key={post.id}>
               <h4>{post.title.toUpperCase()}</h4>
-              <code>{post.body}</code>
+              <span>{post.body}</span>
               <button style={editBtn}>
                 <Link to={`/editpost/${post.id}`}>Edit</Link>
               </button>
@@ -30,12 +30,11 @@ class Posts extends Component {
 
 const editBtn = {
   background: '#008716',
-  color: '#fff',
   border: 'none',
   padding: '5px 9px',
   borderRadius: '20px',
   cursor: 'pointer',
-  marginLeft: '4px',
+  marginLeft: '10px',
   marginRight: '4px',
 }
 
