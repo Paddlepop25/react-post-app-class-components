@@ -24,13 +24,14 @@ class AddPost extends Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} style={{ display: 'flex' }}>
           <input
             type='text'
             onChange={this.handleChange}
             name='title'
             value={this.state.title}
             placeholder='enter title...'
+            style={{ flex: '5', padding: '5px' }}
           />
           <input
             type='text'
@@ -38,8 +39,11 @@ class AddPost extends Component {
             name='body'
             value={this.state.body}
             placeholder='enter body...'
+            style={{ flex: '5', padding: '5px' }}
           />
-          <button type='submit'>Add Post</button>
+          <button type='submit' style={{ flex: '2' }}>
+            Add Post
+          </button>
         </form>
       </>
     )
