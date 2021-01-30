@@ -52,13 +52,13 @@ class App extends Component {
   }
   render() {
     return (
-      <div className='container'>
+      <>
         <Header />
-        <>
-          <AddPost handleSubmit={this.addPost} />
+        <AddPost handleSubmit={this.addPost} />
+        <div className='container'>
           <Posts posts={this.state.posts} delPost={this.deletePost} />
-        </>
-      </div>
+        </div>
+      </>
     )
   }
 }
