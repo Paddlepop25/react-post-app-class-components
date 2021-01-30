@@ -3,7 +3,7 @@ import Posts from './components/Posts'
 import AddPost from './components/AddPost'
 import Header from './components/Header'
 
-import posts from './posts.json'
+import posts from './postsData.json'
 import './App.css'
 
 class App extends Component {
